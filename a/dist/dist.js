@@ -1435,8 +1435,11 @@
       return t[n[0]] = n[1], t
     }, {});
   console.log(o);
-  var i = o.scheme + ":" + o.address + "?amount=" + parseFloat(o.amount || 0) + "&message=" + (o.message || "") + "&req-opreturn=" + (o["req-opreturn"] || "") + "&label=" + (o.label || ""),
-    a = i;
+  if ( o.scheme === 'omotenashicoin' ) {
+    var i = o.scheme + ":" + o.address + "?amount=" + parseFloat(o.amount || 0) + "&message=" + (o.message || "") + "&label=" + (o.label || ""), a = i;
+  } else {
+    var i = o.scheme + ":" + o.address + "?amount=" + parseFloat(o.amount || 0) + "&message=" + (o.message || "") + "&req-opreturn=" + (o["req-opreturn"] || "") + "&label=" + (o.label || ""), a = i;
+  }
   /Android/.test(navigator.userAgent) && (a = "intent://" + o.address + "?amount=" + parseFloat(o.amount || 0) + "&message=" + (o.message || "") + "&req-opreturn=" + (o["req-opreturn"] || "") + "&label=" + (o.label || "") + "#Intent;scheme=" + o.scheme + ";package=org.missmonacoin.monya;end");
   var s = "https://monya-wallet.github.io/wallet?url=" + encodeURIComponent(i);
 
