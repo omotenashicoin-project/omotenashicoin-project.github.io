@@ -1,1 +1,1 @@
-# omotenashicoin-project.github.io
+あ
