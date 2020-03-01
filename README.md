@@ -1,0 +1,1 @@
+# omotenashicoin-project.github.io
